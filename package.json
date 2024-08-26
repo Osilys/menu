@@ -2,7 +2,7 @@
   "name": "bdev01",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://NeosiBDE.github.io/menu.git",
+  "homepage": "https://neosibde.github.io/menu",
   "dependencies": {
     "@testing-library/jest-dom": "^5.17.0",
     "@testing-library/react": "^13.4.0",
