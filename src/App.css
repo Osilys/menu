@@ -93,6 +93,13 @@ main .welcome {
   color: #0d0d0d;
   text-decoration: none; 
   font-size: 1vw;
+  transition: 0.5s;
+}
+
+.btn--big:hover {
+  background: #fc5050;
+  -webkit-box-shadow: 0 0 10px rgba(255, 159, 159, 0.6);
+  box-shadow: 0 0 10px rgba(255, 159, 159, 0.6);
 }
 
 main {

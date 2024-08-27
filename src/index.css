@@ -22,6 +22,16 @@ body::after{
   z-index: 9999;
 }
 
+@keyframes tv-scroll {
+  0%{
+    background-position: 0px 10px;
+    opacity: 0.6;
+  } 100% {
+    background-position: 0 0px;
+    opacity: 1;
+  }
+}
+
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
