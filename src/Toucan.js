@@ -4,12 +4,12 @@ import * as THREE from 'three';
 import { GLTFLoader } from 'three/addons/loaders/GLTFLoader.js';
 import toucanModel from './model/toucan.gltf';
 import { RGBELoader } from 'three/addons/loaders/RGBELoader.js';
-import Main from './main.js';
 
 const hdri = new URL("./model/environment.hdr", import.meta.url);
 
 function App() {
   const mountRef = useRef(null);
+  const modelRef = useRef(null);  // Reference to the model
 
   useEffect(() => {
     // Three.js scene setup
@@ -53,6 +53,7 @@ function App() {
       });
 
       scene.add(model);
+      modelRef.current = model;  // Save the model reference
     }, undefined, function (error) {
       console.error(error);
     });
@@ -68,6 +69,16 @@ function App() {
 
     window.addEventListener('resize', handleResize);
 
+    // Handle scroll event to rotate the model
+    const handleScroll = () => {
+      if (modelRef.current) {
+        const scrollPosition = window.scrollY;
+        modelRef.current.rotation.y = scrollPosition * 0.005; // Adjust the rotation speed as needed
+      }
+    };
+
+    window.addEventListener('scroll', handleScroll);
+
     // Animation loop
     const animate = () => {
       requestAnimationFrame(animate);
@@ -79,6 +90,7 @@ function App() {
     // Clean up on component unmount
     return () => {
       window.removeEventListener('resize', handleResize);
+      window.removeEventListener('scroll', handleScroll);
       if (mountRef.current) {
         mountRef.current.removeChild(renderer.domElement);
       }
@@ -89,7 +101,7 @@ function App() {
   return (
     <div className='mainDiv'>
       <div className='Tdiv' ref={mountRef} />
-      <Main />
+      <h1 class="titre">Neosi</h1>
     </div>
   );
 }

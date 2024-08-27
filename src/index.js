@@ -4,11 +4,13 @@ import './index.css';
 import Toucan from './Toucan';
 import Main from './main';
 import reportWebVitals from './reportWebVitals';
+import { color } from 'three/webgpu';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
     <Toucan />
+    <div className='mmtest'></div>
   </React.StrictMode>
 );
 

@@ -6,11 +6,19 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  position: absolute;
-  top: 50%;
-  right: 50%;
+  position: relative;
+  height: 100vh;
+  width: 100vw;
 }
 
 .Tdiv {
   position: fixed;
+}
+
+.titre {
+  color: white;
+  position: absolute;
+  text-transform: uppercase;
+  font-size: 100px;
+  letter-spacing: 15px
 }
