@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@900&display=swap');
+
 body {
   background-color: black;
 }
@@ -21,4 +23,120 @@ body {
   text-transform: uppercase;
   font-size: 100px;
   letter-spacing: 15px
+}
+
+.background-text {
+  position: absolute;
+  top: 40vh;
+  left: 100vw; /* Start completely off-screen to the right */
+  font-size: 20vh;
+  font-family: "Orbitron", sans-serif;
+  text-transform: uppercase;
+  white-space: nowrap;
+  color: #00000080;
+  overflow: hidden;
+  -webkit-animation: stream-title 10s infinite linear;
+  animation: stream-title 10s infinite linear;
+  z-index: -1;
+}
+
+.background-text-delay {
+  -webkit-animation-delay: 5s;
+  animation-delay: 5s;
+}
+
+@keyframes stream-title {
+  0% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(-200vw); /* Ensure it moves completely off-screen */
+  }
+}
+
+/* Adjustments for mobile screens */
+@media only screen and (max-width: 768px) {
+  .background-text {
+    font-size: 15vh; /* Adjust font size for smaller screens */
+    left: 100vw; /* Start completely off-screen to the right */
+  }
+  .background-text-delay {
+    -webkit-animation-delay: 7s;
+    animation-delay: 7s;
+  }
+  
+  @keyframes stream-title {
+    0% {
+      transform: translateX(0%);
+    }
+    100% {
+      transform: translateX(-500vw); /* Move far enough to be completely off-screen on mobile */
+    }
+  }
+}
+
+main .welcome {
+  display: grid;
+  grid-auto-flow: column;
+  margin-top: 50vh;
+}
+
+.btn--big {
+  padding: 10px 20px;
+  background: #f6edd7;
+  -webkit-box-shadow: 0 0 10px rgba(246, 237, 215, 0.6);
+  box-shadow: 0 0 10px rgba(246, 237, 215, 0.6);
+  text-transform: uppercase;
+  font-family: "Orbitron";
+  font-size: 14px;
+  font-size: 14rem;
+  color: #0d0d0d;
+  text-decoration: none; 
+  font-size: 1vw;
+}
+
+main {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 100;
+  display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+
+}
+
+.left, .right {
+  text-align: center;
+}
+
+.center {
+  width: 40vw;
+}
+
+@media screen and (min-width: 320px) {
+  .btn--big {
+      font-size: calc(9px + 11*((100vw - 320px) / 1080));
+  }
+}
+
+@media only screen and (max-width: 1024px) and (min-width: 320px) {
+  main .welcome .btn {
+      font-size: calc(16px + 4*((100vw - 320px) / 1080));
+  }
+}
+
+@media only screen and (max-width: 1024px) {
+  main .welcome {
+      grid-auto-flow: row;
+      grid-template-rows: 50px auto;
+      margin-top: 70vh;
+  }
+
+  .center{
+    display: none;
+  }
 }

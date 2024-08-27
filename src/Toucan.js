@@ -38,11 +38,11 @@ function App() {
     });
 
     // Add lights to illuminate the model's faces
-    const light1 = new THREE.DirectionalLight(0xFF0000, 10);
+    const light1 = new THREE.DirectionalLight(0xff886f, 10);
     light1.position.set(2, 0, 0);  // Position the light on one side
     scene.add(light1);
 
-    const light2 = new THREE.DirectionalLight(0xFF0000, 10);
+    const light2 = new THREE.DirectionalLight(0xff886f, 10);
     light2.position.set(-2, 0, 0);  // Position the light on the opposite side
     scene.add(light2);
 
@@ -55,7 +55,7 @@ function App() {
       model.traverse((child) => {
         if (child.isMesh) {
           const material = child.material;
-          material.color.setHex(0xffc0c0c0);
+          material.color.setHex(0x7a7a7a);
           material.metalness = 1.0;
           material.roughness = 0.1;
           material.needsUpdate = true;
@@ -133,7 +133,16 @@ function App() {
   return (
     <div className='mainDiv'>
       <div className='Tdiv' ref={mountRef} />
-      <h1 className="titre">Neosi</h1>
+      {/* <h1 className="titre">Neosi</h1> */}
+      <div className='background-text'>Votez Neosi</div>
+      <div className='background-text background-text-delay'>Votez Neosi</div>
+      <main>
+        <div className="welcome">
+          <div className="left"><a className="btn btn--big" id="btn-discover" href="https://www.chrometattooparis.com/tattoos"><span>discover</span></a></div>
+          <div className='center'></div>
+          <div className="right"><a className="btn btn--big" id="btn-booknow" href="https://www.chrometattooparis.com/book-now"><span>book now</span></a></div>
+        </div>
+      </main>
     </div>
   );
 }
