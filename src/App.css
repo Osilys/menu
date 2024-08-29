@@ -55,7 +55,7 @@ body {
 }
 
 /* Adjustments for mobile screens */
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width: 1024px) {
   .background-text {
     font-size: 15vh; /* Adjust font size for smaller screens */
     left: 100vw; /* Start completely off-screen to the right */
