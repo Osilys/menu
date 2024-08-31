@@ -1,5 +1,5 @@
 import React, { useRef, useEffect, useState } from 'react';
-import './App.css';
+import './css/App.css';
 import * as THREE from 'three';
 import { GLTFLoader } from 'three/addons/loaders/GLTFLoader.js';
 import toucanModel from './model/toucan.gltf';

@@ -6,6 +6,7 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   background-image: radial-gradient(circle, #161616, #121212, #0d0d0d, #070707, #000000);
+  overflow: hidden;
 }
 
 body::after{
