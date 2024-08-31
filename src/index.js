@@ -7,11 +7,14 @@ import Header from './header';
 import Footer from './footer';
 import reportWebVitals from './reportWebVitals';
 import { color } from 'three/webgpu';
+import Rotation from './rota.js'; // Import the custom hook
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
+
 root.render(
   <React.StrictMode>
     {/* <Header /> */}
+    <Rotation/>
     <Toucan />
     <Footer />
   </React.StrictMode>
