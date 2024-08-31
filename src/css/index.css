@@ -59,4 +59,5 @@ code {
   height: 100%;
   z-index: 9999;
   background-image: radial-gradient(circle, #161616, #121212, #0d0d0d, #070707, #000000);
+  text-transform: uppercase;
 }
