@@ -37,10 +37,10 @@ code {
     monospace;
 }
 
-p {
+/* p {
   position: relative;
   color: white;
-}
+} */
 
 .mmtest{
   width: 100vw;

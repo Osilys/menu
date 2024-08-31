@@ -1,0 +1,223 @@
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&display=swap');
+
+
+.footer {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    z-index: 100;
+    display: block;
+}
+
+
+.term {
+    position: absolute;
+    bottom: 3vw;
+    left: 3vw;
+    width: 400px;
+    height: 85px;
+    font-family: "IBM Plex Mono";
+    color: #f6edd7;
+    text-transform: uppercase;
+    line-height: 27px;
+    letter-spacing: 0.1em;
+    font-size: 10px;
+    font-size: 10rem;
+    text-shadow: 0 0 10px #f6edd7;
+    overflow: hidden;
+}
+
+
+
+@media screen and (min-width: 320px) {
+    .term {
+        font-size: calc(10px + 0*((100vw - 320px) / 1080));
+    }
+}
+
+
+@media only screen and (max-width: 767px) {
+    .term {
+        display: none;
+    }
+}
+
+
+@media only screen and (max-width: 767px) {
+    .term {
+        display: block;
+        bottom: 1vh;
+        left: 1vh;
+        width: 30vh;
+        height: 90px;
+    }
+}
+
+@media only screen and (min-width: 768px) and (max-width: 1024px) {
+    .term {
+        display: none;
+        margin-bottom: 4vh;
+    }
+}
+
+
+
+@media only screen and (min-width: 768px) and (max-width: 1024px) {
+    .term {
+        display: block;
+        bottom: 1vh;
+        left: 1vh;
+        width: 30vh;
+        height: 90px;
+    }
+}
+
+
+.term__c {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    right: 0;
+}
+
+.term__block--starting {
+    margin-left: 12px;
+    border-left: 1px solid #ff4f4f;
+    color: #ff4f4f;
+}
+
+.term__block {
+    position: relative;
+    margin-bottom: 10px;
+    padding-left: 37px;
+}
+
+.term__block i {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    background-image: url("https://www.chrometattooparis.com/assets/images/misc/line-v-2x.png");
+    background-position: 0 -1px;
+    background-size: 35px auto;
+    width: 35px;
+    opacity: 0.7;
+}
+
+.term__block i::before {
+    top: 0;
+}
+
+.term__block i::after {
+    bottom: 0;
+}
+
+.term__block i:before, .term__block i:after {
+    content: '';
+    position: absolute;
+    left: 12px;
+    background: #f9eed5;
+    background: #f9eed5;
+    width: 10px;
+    height: 1px;
+    -webkit-box-shadow: -1px 0px 13px 1px #f9eed5;
+    box-shadow: -1px 0px 13px 1px #f9eed5;
+}
+
+.term__block:last-child p:last-child::after {
+    display: inline-block;
+    width: 6px;
+    height: 12px;
+    margin-left: 3px;
+    margin-top: -2px;
+    background: #f6edd7;
+    -webkit-box-shadow: 0 0 10px #f6edd7;
+    box-shadow: 0 0 10px #f6edd7;
+    vertical-align: middle;
+    -webkit-animation: blink 0.8s steps(1) infinite;
+    animation: blink 0.8s steps(1) infinite;
+    content: '';
+}
+
+@media only screen and (min-width: 768px) and (max-width: 1024px) {
+    .time {
+        display: none;
+    }
+}
+
+@media screen and (min-width: 320px) {
+    .time {
+        font-size: calc(10px + 0*((100vw - 320px) / 1080));
+    }
+}
+
+@media only screen and (max-width: 767px) {
+    .time {
+        display: none;
+    }
+}
+
+@media screen and (min-width: 320px) {
+    .time {
+        font-size: calc(10px + 0*((100vw - 320px) / 1080));
+    }
+}
+
+.time {
+    position: absolute;
+    bottom: 3vw;
+    right: -170px;
+    width: 400px;
+    height: 190px;
+    font-family: "IBM Plex Mono";
+    font-size: 10px;
+    font-size: 10rem;
+    text-shadow: 0 0 10px #f6edd7;
+    color: #f6edd7;
+    text-transform: uppercase;
+    line-height: 22px;
+    letter-spacing: 0.1em;
+    overflow: hidden;
+}
+
+.time__c {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    right: 0;
+}
+
+.time__block {
+    position: relative;
+    margin-bottom: 10px;
+    padding-left: 37px;
+}
+
+.time__block i {
+    -webkit-transform: rotate(180deg);
+    -ms-transform: rotate(180deg);
+    transform: rotate(180deg);
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 160px;
+    background-image: url("https://www.chrometattooparis.com/assets/images/misc/line-v-2x.png");
+    background-position: 0 -1px;
+    background-size: 35px auto;
+    width: 35px;
+    opacity: 0.7;
+}
+
+.term__block p {
+    margin: 0;
+    padding: 0;
+}
+
+@keyframes blink{
+    0%, 100% {
+        opacity: 1;
+    } 50% {
+        opacity: 0;
+    }
+}

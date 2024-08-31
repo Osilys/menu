@@ -134,13 +134,13 @@ function App() {
     <div className='mainDiv'>
       <div className='Tdiv' ref={mountRef} />
       {/* <h1 className="titre">Neosi</h1> */}
-      <div className='background-text'>Votez Neosi</div>
-      <div className='background-text background-text-delay'>Votez Neosi</div>
+      <div className='background-text' style={{display: "inline-block"}}>Votez Nova</div>
+      <div className='background-text background-text-delay' style={{display: "inline-block"}}>Votez Nova</div>
       <main>
         <div className="welcome">
-          <div className="left"><a className="btn btn--big" id="btn-discover" href="https://www.chrometattooparis.com/tattoos"><span>discover</span></a></div>
+          <div className="left"><a className="btn btn--big" id="btn-discover" href="https://www.chrometattooparis.com/tattoos"><span>Bouton 1</span></a></div>
           <div className='center'></div>
-          <div className="right"><a className="btn btn--big" id="btn-booknow" href="https://www.chrometattooparis.com/book-now"><span>book now</span></a></div>
+          <div className="right"><a className="btn btn--big" id="btn-booknow" href="https://www.chrometattooparis.com/book-now"><span>Bouton 2</span></a></div>
         </div>
       </main>
     </div>

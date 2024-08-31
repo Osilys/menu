@@ -26,15 +26,16 @@ body {
 }
 
 .background-text {
+  display: none;
   position: absolute;
   top: 40vh;
-  left: 100vw; /* Start completely off-screen to the right */
+  padding-left: 180vw;
   font-size: 20vh;
-  font-family: "Orbitron", sans-serif;
+  font-family: "Orbitron";
   text-transform: uppercase;
   white-space: nowrap;
-  color: #00000080;
   overflow: hidden;
+  color: #00000080;
   -webkit-animation: stream-title 10s infinite linear;
   animation: stream-title 10s infinite linear;
   z-index: -1;
@@ -45,33 +46,25 @@ body {
   animation-delay: 5s;
 }
 
+
 @keyframes stream-title {
   0% {
     transform: translateX(0%);
   }
   100% {
-    transform: translateX(-200vw); /* Ensure it moves completely off-screen */
+    transform: translateX(-100%);
   }
 }
 
-/* Adjustments for mobile screens */
-@media only screen and (max-width: 1024px) {
+@media only screen and (min-width: 768px) and (max-width: 1024px) {
   .background-text {
-    font-size: 15vh; /* Adjust font size for smaller screens */
-    left: 100vw; /* Start completely off-screen to the right */
+      padding-left: 380vw;
   }
-  .background-text-delay {
-    -webkit-animation-delay: 7s;
-    animation-delay: 7s;
-  }
-  
-  @keyframes stream-title {
-    0% {
-      transform: translateX(0%);
-    }
-    100% {
-      transform: translateX(-500vw); /* Move far enough to be completely off-screen on mobile */
-    }
+}
+
+@media only screen and (max-width: 767px) {
+  .background-text {
+      padding-left: 450vw;
   }
 }
 
