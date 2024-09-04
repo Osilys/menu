@@ -2,7 +2,7 @@ import React, { useRef, useEffect, useState } from 'react';
 import './css/App.css';
 import * as THREE from 'three';
 import { GLTFLoader } from 'three/addons/loaders/GLTFLoader.js';
-import toucanModel from './model/toucan.gltf';
+import toucanModel from './model/toucan.glb';
 import { RGBELoader } from 'three/addons/loaders/RGBELoader.js';
 
 const hdri = new URL("./model/environment.hdr", import.meta.url);
@@ -38,11 +38,11 @@ function App() {
     });
 
     // Add lights to illuminate the model's faces
-    const light1 = new THREE.DirectionalLight(0x3498db, 10);
+    const light1 = new THREE.DirectionalLight(0xf18f0f, 10);
     light1.position.set(2, 0, 0);  // Position the light on one side
     scene.add(light1);
 
-    const light2 = new THREE.DirectionalLight(0x3498db, 10);
+    const light2 = new THREE.DirectionalLight(0xf18f0f, 10);
     light2.position.set(-2, 0, 0);  // Position the light on the opposite side
     scene.add(light2);
 
@@ -55,7 +55,7 @@ function App() {
       model.traverse((child) => {
         if (child.isMesh) {
           const material = child.material;
-          material.color.setHex(0x7a7a7a);
+          // material.color.setHex(0x839baa);
           material.metalness = 1.0;
           material.roughness = 0.1;
           material.needsUpdate = true;

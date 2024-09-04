@@ -29,7 +29,7 @@ body {
   display: none;
   position: absolute;
   top: 40vh;
-  padding-left: 180vw;
+  padding-left: 190vw;
   font-size: 20vh;
   font-family: "Orbitron";
   text-transform: uppercase;
@@ -90,9 +90,9 @@ main .welcome {
 }
 
 .btn--big:hover {
-  background: #3498db;
-  -webkit-box-shadow: 0 0 10px rgba(159, 212, 255, 0.6);
-  box-shadow: 0 0 10px rgba(159, 212, 255, 0.6);
+  background: #f18f0f;
+  -webkit-box-shadow: 0 0 10px rgba(247, 158, 24, 0.6);
+  box-shadow: 0 0 10px rgba(247, 158, 24, 0.6);
 }
 
 main {

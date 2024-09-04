@@ -5,13 +5,8 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background-image: radial-gradient(circle, 
-  #e0f7fa 0%,      /* Bleu très clair (presque blanc) */
-  #b2ebf2 25%,     /* Bleu clair */
-  #80deea 50%,     /* Bleu doux */
-  #4dd0e1 75%,     /* Bleu un peu plus soutenu */
-  #26c6da 100%     /* Bleu soutenu à l'extérieur */
-);
+  background-image: radial-gradient(circle, #161616, #121212, #0d0d0d, #070707, #000000);
+
   overflow: hidden;
 }
 
