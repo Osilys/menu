@@ -29,7 +29,7 @@ const useScreenOrientation = () => {
 
 function Rota() {    
     const orientation = useScreenOrientation();
-    if (orientation != "portrait-primary" && window.screen.width <= 767) {
+    if (orientation !== "portrait-primary" && window.screen.width <= 767) {
         return (
             <div className='paysage'>
                 <h1>Tournez votre écran</h1>
