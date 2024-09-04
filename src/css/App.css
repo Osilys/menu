@@ -90,9 +90,9 @@ main .welcome {
 }
 
 .btn--big:hover {
-  background: #fc5050;
-  -webkit-box-shadow: 0 0 10px rgba(255, 159, 159, 0.6);
-  box-shadow: 0 0 10px rgba(255, 159, 159, 0.6);
+  background: #3498db;
+  -webkit-box-shadow: 0 0 10px rgba(159, 212, 255, 0.6);
+  box-shadow: 0 0 10px rgba(159, 212, 255, 0.6);
 }
 
 main {

@@ -38,11 +38,11 @@ function App() {
     });
 
     // Add lights to illuminate the model's faces
-    const light1 = new THREE.DirectionalLight(0xff886f, 10);
+    const light1 = new THREE.DirectionalLight(0x3498db, 10);
     light1.position.set(2, 0, 0);  // Position the light on one side
     scene.add(light1);
 
-    const light2 = new THREE.DirectionalLight(0xff886f, 10);
+    const light2 = new THREE.DirectionalLight(0x3498db, 10);
     light2.position.set(-2, 0, 0);  // Position the light on the opposite side
     scene.add(light2);
 
@@ -138,9 +138,9 @@ function App() {
       <div className='background-text background-text-delay' style={{display: "inline-block"}}>Votez NOMBDE</div>
       <main>
         <div className="welcome">
-          <div className="left"><a className="btn btn--big" id="btn-discover" href="https://www.chrometattooparis.com/tattoos"><span>Bouton 1</span></a></div>
+          <div className="left"><a className="btn btn--big" id="btn-discover" href=""><span>Bouton 1</span></a></div>
           <div className='center'></div>
-          <div className="right"><a className="btn btn--big" id="btn-booknow" href="https://www.chrometattooparis.com/book-now"><span>Bouton 2</span></a></div>
+          <div className="right"><a className="btn btn--big" id="btn-booknow" href=""><span>Bouton 2</span></a></div>
         </div>
       </main>
     </div>
