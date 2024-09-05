@@ -1,4 +1,4 @@
-import React, { useRef, useEffect, useState } from 'react';
+import React, { useRef, useEffect } from 'react';
 import './css/App.css';
 import * as THREE from 'three';
 import { GLTFLoader } from 'three/addons/loaders/GLTFLoader.js';
@@ -134,8 +134,8 @@ function App() {
     <div className='mainDiv'>
       <div className='Tdiv' ref={mountRef} />
       {/* <h1 className="titre">Neosi</h1> */}
-      <div className='background-text' style={{display: "inline-block"}}>Votez NOMBDE</div>
-      <div className='background-text background-text-delay' style={{display: "inline-block"}}>Votez NOMBDE</div>
+      <div className='background-text' style={{display: "inline-block"}}>Votez osilys</div>
+      <div className='background-text background-text-delay' style={{display: "inline-block"}}>Votez osilys</div>
       <main>
         <div className="welcome">
           <div className="left"><a className="btn btn--big" id="btn-discover" href=""><span>Bouton 1</span></a></div>

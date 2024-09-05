@@ -2,11 +2,11 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './css/index.css';
 import Toucan from './Toucan';
-import Main from './main';
-import Header from './header';
+// import Main from './main';
+// import Header from './header';
 import Footer from './footer';
 import reportWebVitals from './reportWebVitals';
-import { color } from 'three/webgpu';
+// import { color } from 'three/webgpu';
 import Rotation from './rota.js'; // Import the custom hook
 
 const root = ReactDOM.createRoot(document.getElementById('root'));

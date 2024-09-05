@@ -8,7 +8,7 @@ function footer () {
             <div className="term__block term__block--starting">
             <p>Startup</p>
             </div>
-        <div className="term__block"><i></i><p>START BOOTING SYSTEM...</p></div><div className="term__block--loader term__block"><i></i></div><div className="term__block"><i></i><p>// RUNNING SKYSOFT TOMA PEGAZ 0?67.9712.?095</p><p>New session</p><p>Welcome User 9595</p></div></div>
+        <div className="term__block"><i></i><p>START BOOTING SYSTEM...</p></div><div className="term__block--loader term__block"><i></i></div><div className="term__block"><i></i><p>RUNNING SKYSOFT TOMA PEGAZ 0?67.9712.?095</p><p>New session</p><p>Welcome User 9595</p></div></div>
         </div>
 
         {/* <div className="time">
