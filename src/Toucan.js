@@ -4,6 +4,8 @@ import * as THREE from 'three';
 import { GLTFLoader } from 'three/addons/loaders/GLTFLoader.js';
 import toucanModel from './model/toucan.glb';
 import { RGBELoader } from 'three/addons/loaders/RGBELoader.js';
+import { BrowserRouter as Router, Route, Routes, Link, useNavigate } from 'react-router-dom';
+import TV from './tv.js'
 
 const hdri = new URL("./model/environment.hdr", import.meta.url);
 
@@ -11,6 +13,7 @@ function App() {
   const mountRef = useRef(null);
   const modelRef = useRef(null);  // Reference to the model
   const targetRotation = useRef({ x: 0, y: 0 }); // Target rotation for easing
+  const navigate = useNavigate(); // Hook for navigation
 
   useEffect(() => {
     // Three.js scene setup
@@ -55,7 +58,6 @@ function App() {
       model.traverse((child) => {
         if (child.isMesh) {
           const material = child.material;
-          // material.color.setHex(0x839baa);
           material.metalness = 1.0;
           material.roughness = 0.1;
           material.needsUpdate = true;
@@ -68,7 +70,6 @@ function App() {
       console.error(error);
     });
 
-    // Handle window resize
     const handleResize = () => {
       camera.aspect = window.innerWidth / window.innerHeight;
       camera.updateProjectionMatrix();
@@ -77,38 +78,32 @@ function App() {
 
     window.addEventListener('resize', handleResize);
 
-    // Handle mouse movement to rotate the model
     const handleMouseMove = (event) => {
-      const mouseX = (event.clientX / window.innerWidth) * 2 - 1; // Normalized between -1 and 1
-      const mouseY = -(event.clientY / window.innerHeight) * 2 + 1; // Normalized between -1 and 1
+      const mouseX = (event.clientX / window.innerWidth) * 2 - 1;
+      const mouseY = -(event.clientY / window.innerHeight) * 2 + 1;
 
-      // Update target rotation
-      targetRotation.current.y = (mouseX / 4) * Math.PI; // Rotate around Y axis
-      targetRotation.current.x = (-mouseY / 4) * Math.PI / 2; // Rotate around X axis, limited to 90 degrees
+      targetRotation.current.y = (mouseX / 4) * Math.PI;
+      targetRotation.current.x = (-mouseY / 4) * Math.PI / 2;
     };
 
-    // Handle touch movement to rotate the model
     const handleTouchMove = (event) => {
-      if (event.touches.length === 1) {  // Single touch
+      if (event.touches.length === 1) {
         const touch = event.touches[0];
-        const touchX = (touch.clientX / window.innerWidth) * 2 - 1; // Normalized between -1 and 1
-        const touchY = -(touch.clientY / window.innerHeight) * 2 + 1; // Normalized between -1 and 1
+        const touchX = (touch.clientX / window.innerWidth) * 2 - 1;
+        const touchY = -(touch.clientY / window.innerHeight) * 2 + 1;
 
-        // Update target rotation
-        targetRotation.current.y = (touchX / 4) * Math.PI; // Rotate around Y axis
-        targetRotation.current.x = (-touchY / 4) * Math.PI / 2; // Rotate around X axis, limited to 90 degrees
+        targetRotation.current.y = (touchX / 4) * Math.PI;
+        targetRotation.current.x = (-touchY / 4) * Math.PI / 2;
       }
     };
 
     window.addEventListener('mousemove', handleMouseMove);
-    window.addEventListener('touchmove', handleTouchMove); // Add touch event listener
+    window.addEventListener('touchmove', handleTouchMove);
 
-    // Animation loop with easing
     const animate = () => {
       requestAnimationFrame(animate);
 
       if (modelRef.current) {
-        // Easing towards the target rotation
         modelRef.current.rotation.y += (targetRotation.current.y - modelRef.current.rotation.y) * 0.05;
         modelRef.current.rotation.x += (targetRotation.current.x - modelRef.current.rotation.x) * 0.05;
       }
@@ -118,11 +113,10 @@ function App() {
 
     animate();
 
-    // Clean up on component unmount
     return () => {
       window.removeEventListener('resize', handleResize);
       window.removeEventListener('mousemove', handleMouseMove);
-      window.removeEventListener('touchmove', handleTouchMove); // Remove touch event listener
+      window.removeEventListener('touchmove', handleTouchMove);
       if (mountRef.current) {
         mountRef.current.removeChild(renderer.domElement);
       }
@@ -130,21 +124,35 @@ function App() {
     };
   }, []);
 
+  const handleClick = () => {
+    navigate('/menu'); // Navigate to the TV page when "Bouton 2" is clicked
+  };
+
   return (
     <div className='mainDiv'>
       <div className='Tdiv' ref={mountRef} />
-      {/* <h1 className="titre">Neosi</h1> */}
       <div className='background-text' style={{display: "inline-block"}}>Votez osilys</div>
       <div className='background-text background-text-delay' style={{display: "inline-block"}}>Votez osilys</div>
       <main>
         <div className="welcome">
-          <div className="left"><a className="btn btn--big" id="btn-discover" href=""><span>Bouton 1</span></a></div>
+          <div className="left"><a className="btn btn--big" id="btn-discover" href="#"><span>Bouton 1</span></a></div>
           <div className='center'></div>
-          <div className="right"><a className="btn btn--big" id="btn-booknow" href=""><span>Bouton 2</span></a></div>
+          <div className="right"><button className="btn btn--big" id="btn-booknow" onClick={handleClick}><span>Bouton 2</span></button></div>
         </div>
       </main>
     </div>
   );
 }
 
-export default App;
+function AppRouter() {
+  return (
+    <Router>
+      <Routes>
+        <Route path="/presentation" element={<App />} />
+        <Route path="/menu" element={<TV />} />
+      </Routes>
+    </Router>
+  );
+}
+
+export default AppRouter;

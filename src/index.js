@@ -8,6 +8,7 @@ import Footer from './footer';
 import reportWebVitals from './reportWebVitals';
 // import { color } from 'three/webgpu';
 import Rotation from './rota.js'; // Import the custom hook
+import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 
