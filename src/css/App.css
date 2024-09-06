@@ -17,6 +17,10 @@ body {
   position: fixed;
 }
 
+.tv {
+  position: fixed;
+}
+
 .titre {
   color: white;
   position: absolute;
@@ -76,6 +80,7 @@ main .welcome {
 
 .btn--big {
   padding: 10px 20px;
+  border: 0;
   background: #f6edd7;
   -webkit-box-shadow: 0 0 10px rgba(246, 237, 215, 0.6);
   box-shadow: 0 0 10px rgba(246, 237, 215, 0.6);
@@ -87,6 +92,7 @@ main .welcome {
   text-decoration: none; 
   font-size: 1vw;
   transition: 0.5s;
+  cursor: pointer;
 }
 
 .btn--big:hover {
@@ -139,4 +145,13 @@ main {
   .center{
     display: none;
   }
+}
+
+.Tdiv{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  height: 100vh;
+  width: 100vw;
 }
